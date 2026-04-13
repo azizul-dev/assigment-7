@@ -14,8 +14,8 @@ const NavBar = () => {
             <div className="flex-none">
                 <ul className="menu menu-horizontal px-1">
                     <li><Link href={"/"}> <FaHome />Home</Link></li>
-                    <li><Link href={"/"}> <RiTimeLine />Timeline</Link></li>
-                    <li><Link href={"/"}> <GoGraph />Stats</Link></li>
+                    <li><Link href={"/timeLine"}> <RiTimeLine />Timeline</Link></li>
+                    <li><Link href={"/stats"}> <GoGraph />Stats</Link></li>
                     
                 </ul>
             </div>
