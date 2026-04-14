@@ -26,7 +26,7 @@ const getStatusStyle = (status) => {
 };
 
 const FriendsDetailPage = async ({ params }) => {
-    const res = await fetch("/data.json", {
+    const res = await fetch("https://assignment-7-swart-one.vercel.app/", {
         cache: "no-store"
     });
     const friends = await res.json();
