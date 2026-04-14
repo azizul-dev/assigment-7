@@ -1,9 +1,11 @@
 import React from 'react';
 
-const FriendsDetailPage = () => {
+const FriendsDetailPage = async ({params}) => {
+    const {id} = await params;
+    console.log(id, "params");
     return (
         <div>
-            friends
+            This is a friends page
         </div>
     );
 };
