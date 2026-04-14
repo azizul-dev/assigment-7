@@ -9,6 +9,7 @@ import { toast } from 'react-toastify';
 const CallDetails = ({ friend }) => {
 
     const { calls, setCalls } = useContext(TimelineContext);
+    
 
     const handleCheck = (type) => {
         const newCall = {
