@@ -1,4 +1,5 @@
 // app/friends/[id]/page.jsx
+import CallDetails from '@/components/callInfo/callsDetailBtn';
 import Image from 'next/image';
 import React from 'react';
 import { FaArchive, FaHandshake, FaVideo } from 'react-icons/fa';
@@ -141,7 +142,7 @@ const FriendsDetailPage = async ({ params }) => {
                     </div>
 
 
-                    <div className='bg-white rounded-xl shadow p-5'>
+                    {/* <div className='bg-white rounded-xl shadow p-5'>
                         <h3 className='font-bold text-lg mb-3'>Quick Check-In</h3>
                         <div className='grid grid-cols-3 gap-3'>
                             <button className='border rounded-xl py-4 flex flex-col items-center gap-1 hover:bg-gray-50'>
@@ -157,7 +158,8 @@ const FriendsDetailPage = async ({ params }) => {
                                 <span className='text-sm'>Video</span>
                             </button>
                         </div>
-                    </div>
+                    </div> */}
+                    <CallDetails friend={friend}/>
 
 
                     <div className='bg-white rounded-xl shadow p-5'>
