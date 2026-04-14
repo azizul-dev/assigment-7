@@ -1,6 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  /* config options here */
+    images: {
+        // ✅ যেকোনো domain থেকে image load হবে
+        remotePatterns: [
+            {
+                protocol: "https",
+                hostname: "**",
+            },
+        ],
+    },
 };
 
 export default nextConfig;
