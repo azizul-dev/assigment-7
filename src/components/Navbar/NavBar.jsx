@@ -3,21 +3,35 @@ import React from 'react';
 import { FaHome } from 'react-icons/fa';
 import { GoGraph } from 'react-icons/go';
 import { RiTimeLine } from 'react-icons/ri';
+import MyLink from '../MyLink';
 
 const NavBar = () => {
     const links = (
         <>
-            <li><Link href={"/"}> <FaHome />Home</Link></li>
-            <li><Link href={"/timeLine"}> <RiTimeLine />Timeline</Link></li>
-            <li><Link href={"/stats"}> <GoGraph />Stats</Link></li>
+            <li>
+                <MyLink href="/">
+                    <FaHome /> Home
+                </MyLink>
+            </li>
+            <li className="mt-2 lg:mt-0 lg:ml-3">
+                <MyLink href="/timeLine">
+                    <RiTimeLine /> Timeline
+                </MyLink>
+            </li>
+            <li className="mt-2 lg:mt-0 lg:ml-3">
+                <MyLink href="/stats">
+                    <GoGraph /> Stats
+                </MyLink>
+            </li>
 
         </>
     )
+
+
     return (
         <div>
             <div className="navbar bg-base-100 shadow-sm">
 
-                {/* LEFT SIDE (Logo + Mobile Menu) */}
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -39,7 +53,7 @@ const NavBar = () => {
                     </Link>
                 </div>
 
-                {/* RIGHT SIDE (Links) */}
+
                 <div className="navbar-end hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
                         {links}
