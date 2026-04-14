@@ -9,7 +9,12 @@
     "tags": ["college", "close friend"],
     "bio": "Met in BUET during freshman year. We used to pull all-nighters together before exams. Now he works at a tech startup in Dhaka.",
     "goal": 14,
-    "next_due_date": "2026-04-20"
+    "next_due_date": "2026-04-20",
+    "interactions": [
+      { "type": "Call", "note": "Caught up after a long time", "date": "2026-03-28" },
+      { "type": "Text", "note": "Sent him a meme, he laughed", "date": "2026-03-10" },
+      { "type": "Meetup", "note": "Had tea near Dhanmondi lake", "date": "2026-02-20" }
+    ]
   },
   {
     "id": 2,
@@ -21,7 +26,12 @@
     "tags": ["work", "mentor"],
     "bio": "My team lead at my first internship. She taught me how to write clean code and handle client pressure. Still my go-to person for career advice.",
     "goal": 10,
-    "next_due_date": "2026-04-18"
+    "next_due_date": "2026-04-18",
+    "interactions": [
+      { "type": "Text", "note": "Asked for career advice on new offer", "date": "2026-04-09" },
+      { "type": "Call", "note": "She called to check in on my progress", "date": "2026-03-30" },
+      { "type": "Meetup", "note": "Had lunch near office in Gulshan", "date": "2026-03-15" }
+    ]
   },
   {
     "id": 3,
@@ -33,7 +43,12 @@
     "tags": ["school", "childhood"],
     "bio": "Grew up on the same street in Sylhet. We played cricket every afternoon after school. He moved to Chittagong but we still talk regularly.",
     "goal": 14,
-    "next_due_date": "2026-04-16"
+    "next_due_date": "2026-04-16",
+    "interactions": [
+      { "type": "Call", "note": "Talked about his new job in Chittagong", "date": "2026-04-03" },
+      { "type": "Text", "note": "Wished him on his birthday", "date": "2026-03-22" },
+      { "type": "Video", "note": "Video called during Eid holidays", "date": "2026-03-01" }
+    ]
   },
   {
     "id": 4,
@@ -45,7 +60,12 @@
     "tags": ["university", "project partner"],
     "bio": "We worked on our final year thesis together on machine learning. She is now doing her Masters in Canada. Time zones make it hard but she is worth the effort.",
     "goal": 21,
-    "next_due_date": "2026-04-25"
+    "next_due_date": "2026-04-25",
+    "interactions": [
+      { "type": "Video", "note": "Caught up over Google Meet, she loves Canada", "date": "2026-03-15" },
+      { "type": "Text", "note": "She shared her research paper draft", "date": "2026-03-02" },
+      { "type": "Call", "note": "Called to celebrate her admission news", "date": "2026-02-10" }
+    ]
   },
   {
     "id": 5,
@@ -57,7 +77,12 @@
     "tags": ["work", "close friend"],
     "bio": "Colleague turned best friend. We bond over bad coffee and good memes at the office. Our Friday lunch hangouts are sacred.",
     "goal": 7,
-    "next_due_date": "2026-04-17"
+    "next_due_date": "2026-04-17",
+    "interactions": [
+      { "type": "Meetup", "note": "Friday lunch at the usual spot", "date": "2026-04-11" },
+      { "type": "Text", "note": "Sent the funniest meme of the week", "date": "2026-04-08" },
+      { "type": "Call", "note": "Discussed the new project deadline", "date": "2026-04-05" }
+    ]
   },
   {
     "id": 6,
@@ -69,7 +94,12 @@
     "tags": ["college", "study group"],
     "bio": "Part of our five-person study group in college. She has a gift for explaining complex topics simply. Now she teaches at a private university.",
     "goal": 10,
-    "next_due_date": "2026-04-15"
+    "next_due_date": "2026-04-15",
+    "interactions": [
+      { "type": "Text", "note": "She shared her lecture notes on algorithms", "date": "2026-04-05" },
+      { "type": "Meetup", "note": "Met at a faculty seminar in Dhaka", "date": "2026-03-28" },
+      { "type": "Call", "note": "Discussed old college memories", "date": "2026-03-12" }
+    ]
   },
   {
     "id": 7,
@@ -81,7 +111,12 @@
     "tags": ["school", "old friend"],
     "bio": "Best friend from Class 6 through SSC. We drifted apart after different colleges but every reunion feels like no time passed at all.",
     "goal": 30,
-    "next_due_date": "2026-04-30"
+    "next_due_date": "2026-04-30",
+    "interactions": [
+      { "type": "Call", "note": "Randomly called, talked for two hours", "date": "2026-03-01" },
+      { "type": "Text", "note": "Sent an old school photo found in an album", "date": "2026-02-14" },
+      { "type": "Meetup", "note": "Met during Eid reunion at his place", "date": "2026-01-20" }
+    ]
   },
   {
     "id": 8,
@@ -93,7 +128,12 @@
     "tags": ["neighbor", "close friend"],
     "bio": "We met at a local book club two years ago and instantly clicked over our love for Humayun Ahmed novels. She brings homemade food every time we meet.",
     "goal": 10,
-    "next_due_date": "2026-04-19"
+    "next_due_date": "2026-04-19",
+    "interactions": [
+      { "type": "Meetup", "note": "Book club meeting, discussed Himu series", "date": "2026-04-08" },
+      { "type": "Text", "note": "She recommended a new Bangladeshi novel", "date": "2026-04-01" },
+      { "type": "Call", "note": "Talked about the book fair visit plan", "date": "2026-03-20" }
+    ]
   },
   {
     "id": 9,
@@ -105,7 +145,12 @@
     "tags": ["university", "roommate"],
     "bio": "My roommate for three years during university. We survived exam stress, power cuts, and terrible hostel food together. He is like a brother to me.",
     "goal": 14,
-    "next_due_date": "2026-04-22"
+    "next_due_date": "2026-04-22",
+    "interactions": [
+      { "type": "Call", "note": "He called complaining about his new apartment", "date": "2026-04-01" },
+      { "type": "Video", "note": "Video called, showed me his new place", "date": "2026-03-18" },
+      { "type": "Meetup", "note": "Had biriyani at Fakruddin together", "date": "2026-03-05" }
+    ]
   },
   {
     "id": 10,
@@ -117,6 +162,11 @@
     "tags": ["family friend", "mentor"],
     "bio": "A family friend who guided me through my early career decisions. She has been in the industry for 15 years and always gives honest, no-nonsense advice.",
     "goal": 14,
-    "next_due_date": "2026-04-21"
+    "next_due_date": "2026-04-21",
+    "interactions": [
+      { "type": "Call", "note": "Asked for advice on salary negotiation", "date": "2026-03-23" },
+      { "type": "Meetup", "note": "Family dinner at her house in Mirpur", "date": "2026-03-10" },
+      { "type": "Text", "note": "She sent an article on career growth", "date": "2026-02-28" }
+    ]
   }
 ]

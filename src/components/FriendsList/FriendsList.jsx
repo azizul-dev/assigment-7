@@ -1,6 +1,7 @@
 "use client";
 
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
 
@@ -24,47 +25,50 @@ const getStatusStyle = (status) => {
 const FriendsList = ({ friends }) => {
     return (
 
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-4 container mx-auto p-4'>
-            {friends.map((friend, index) => (
+        <div className=' container mx-auto'>
+            <h2 className=' font-bold text-2xl'>Your Friends</h2>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-4  p-4'>
 
-                <div key={index} className='bg-white shadow-md rounded-xl p-5 flex flex-col items-center gap-2 space-y-4'>
+                {friends.map((friend, index) => (
 
-
-                    <Image
-                        src={friend.picture}
-                        alt={friend.name}
-                        width={80}
-                        height={80}
-                        className='rounded-full object-cover'
-                    />
+                    <Link href={`/friends/${friend.id}`} key={index} className='bg-white shadow-md rounded-xl p-5 flex flex-col items-center gap-2 space-y-4'>
 
 
-                    <h3 className='font-bold text-lg text-center'>{friend.name}</h3>
+                        <Image
+                            src={friend.picture}
+                            alt={friend.name}
+                            width={80}
+                            height={80}
+                            className='rounded-full object-cover'
+                        />
 
 
-                    <p className='text-sm text-gray-400'>{friend.days_since_contact}d ago</p>
+                        <h3 className='font-bold text-lg text-center'>{friend.name}</h3>
 
-                    <div className='flex flex-wrap justify-center items-center gap-3'>
-                        {friend.tags.map((tag, i) => (
-                            <span
-                                key={i}
-                                // ✅ bg-green-100 সরিয়ে style দিয়ে background দাও
-                                className='text-green-700 p-2 rounded-md uppercase'
-                                style={{ backgroundColor: "#DCFCE7" }}
-                            >
-                                {tag}
-                            </span>
-                        ))}
-                    </div>
-                    <span
-                        className={`text-xs px-4 py-1 rounded-full font-semibold capitalize ${getStatusStyle(friend.status).className}`}
-                        style={getStatusStyle(friend.status).style}
-                    >
-                        {friend.status}
-                    </span>
 
-                </div>
-            ))}
+                        <p className='text-sm text-gray-400'>{friend.days_since_contact}d ago</p>
+
+                        <div className='flex justify-center items-center gap-2'>
+                            {friend.tags.map((tag, i) => (
+                                <span
+                                    key={i}
+                                    className='text-green-700 px-3 py-2 rounded-md whitespace-nowrap md:whitespace-normal'
+                                    style={{ backgroundColor: "#DCFCE7" }}
+                                >
+                                    {tag}
+                                </span>
+                            ))}
+                        </div>
+                        <span
+                            className={`text-xs px-4 py-1 rounded-full font-semibold capitalize ${getStatusStyle(friend.status).className}`}
+                            style={getStatusStyle(friend.status).style}
+                        >
+                            {friend.status}
+                        </span>
+
+                    </Link>
+                ))}
+            </div>
         </div>
     );
 };
