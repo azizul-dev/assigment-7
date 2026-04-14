@@ -26,7 +26,7 @@ const getStatusStyle = (status) => {
 };
 
 const FriendsDetailPage = async ({ params }) => {
-    const res = await fetch("http://localhost:3000/data.json", {
+    const res = await fetch("/data.json", {
         cache: "no-store"
     });
     const friends = await res.json();
