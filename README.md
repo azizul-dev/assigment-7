@@ -1,36 +1,89 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🌿 KeenKeeper
 
-## Getting Started
+![Banner](images/banner.png)
 
-First, run the development server:
+> **Your personal shelf of meaningful connections.**
+> Browse, tend, and nurture the relationships that matter most.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+🔗 **Live Demo:** [https://assignment-7-swart-one.vercel.app/](https://assignment-7-swart-one.vercel.app/)
+
+---
+
+## 📖 Short Description
+
+KeenKeeper is a personal relationship management app that helps you stay connected with the people who matter most. Track your friendships, log interactions, and visualize your communication habits — all in one place.
+
+---
+
+## 🛠️ Technologies Used
+
+| Technology | Purpose |
+|------------|---------|
+| **Next.js 15** | Full-stack React framework |
+| **Tailwind CSS** | Utility-first styling |
+| **DaisyUI** | UI component library |
+| **Recharts** | Data visualization & pie charts |
+| **React Icons** | Icon library |
+| **React Spinners** | Loading animations |
+| **React Toastify** | Toast notifications |
+| **Vercel** | Deployment & hosting |
+
+---
+
+## ✨ Key Features
+
+![Features](images/features.png)
+
+### 🤝 1. Friend Tracking
+Keep track of all your important relationships in one place. Each friend has a detailed profile with status indicators — **On Track**, **Almost Due**, or **Overdue** — so you always know who needs attention.
+
+### ⏱️ 2. Timeline Log
+Log every **Call**, **Text**, and **Video** interaction with your friends. Filter interactions by type and see your full interaction history in a clean, organized timeline.
+
+### 📊 3. Friendship Analytics
+Visualize your communication patterns with beautiful **pie charts**. See at a glance how you're staying in touch — whether through calls, texts, or video chats.
+
+---
+
+## 📁 Project Structure
+
+```
+src/
+├── app/
+│   ├── (main)/
+│   │   ├── friends/[id]/   # Friend detail page
+│   │   ├── timeLine/       # Timeline page
+│   │   └── stats/          # Analytics page
+├── components/
+│   ├── Navbar/
+│   ├── Footer/
+│   ├── Banner/
+│   ├── Friends/
+│   ├── FriendsList/
+│   └── callInfo/
+├── context/
+│   └── TimelineContext.jsx  # Global state management
+public/
+└── data.json               # Friends data
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 🚀 Getting Started
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+# Clone the repository
+git clone https://github.com/azizul-dev/assigment-7
 
-## Learn More
+# Install dependencies
+npm install
 
-To learn more about Next.js, take a look at the following resources:
+# Run the development server
+npm run dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+<p align="center">Made with ❤️ by <strong>Md. Azizul Islam</strong></p>
