@@ -3,11 +3,11 @@ import CallDetails from '@/components/callInfo/callsDetailBtn';
 import Image from 'next/image';
 import React from 'react';
 import { FaArchive, FaHandshake, FaVideo } from 'react-icons/fa';
-import { FiEdit, FiPhone } from 'react-icons/fi';
+import { FiEdit } from 'react-icons/fi';
 import { HiBellSnooze } from 'react-icons/hi2';
 import { IoMdText } from 'react-icons/io';
 import { IoTime } from 'react-icons/io5';
-import { MdAddCall, MdDeleteSweep, MdMissedVideoCall } from 'react-icons/md';
+import { MdAddCall, MdDeleteSweep } from 'react-icons/md';
 
 
 const getStatusStyle = (status) => {

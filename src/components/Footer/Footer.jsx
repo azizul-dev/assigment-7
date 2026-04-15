@@ -12,7 +12,7 @@ const Footer = () => {
         <footer className="w-full bg-[#244D3F] text-white p-10 text-center overflow-hidden">
             <aside>
                 <div className='space-y-4'>
-                    <h2 className='font-bold text-5xl text-center'>KeenKeeper</h2>
+                    <h2 className='font-bold text-5xl text-center '>KeenKeeper</h2>
                     <p className="font-bold text-zinc-300">
                         Your personal shelf of meaningful connections. Browse, tend, and nurture the relationships that matter most.
                     </p>
