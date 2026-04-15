@@ -1,6 +1,21 @@
-import React from 'react';
 
-const Banner = () => {
+"use client";
+
+import { TimelineContext } from '@/context/TimelineContext';
+import React, { useContext } from 'react';
+
+const Banner = ({friends}) => {
+
+    const {calls} = useContext(TimelineContext);
+
+    const totalFriends = friends.length;
+
+    const onTrack = friends.filter(friend => friend.status === "on-track").length;
+
+
+    const needAttention = totalFriends - onTrack;
+    const interactionsThisMonth = calls.length;
+
     return (
         <div className=' p-5 container mx-auto py-10 space-y-3 bg-[#ffffff]'>
             <div className=' text-center  space-y-3'>
@@ -11,20 +26,20 @@ const Banner = () => {
             </div>
             <div className=' grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-4 '>
                 <div className='  p-4 w-full justify-center py-6 flex flex-col items-center  bg-white border border-gray-100 shadow-md rounded-xl'>
-                    <h2>10</h2>
+                    <h2>{totalFriends}</h2>
                     <p>Total Friends</p>
                 </div>
                 <div className='p-4 w-full py-6 flex justify-center flex-col items-center   bg-white border border-gray-100 shadow-md rounded-xl'>
-                    <h2>10</h2>
-                    <p>Total Friends</p>
+                    <h2>{onTrack}</h2>
+                    <p>On Track</p>
                 </div>
                 <div className='  p-4 w-full py-6 flex justify-center  flex-col items-center  bg-white border border-gray-100 shadow-md rounded-xl'>
-                    <h2>10</h2>
-                    <p>Total Friends</p>
+                    <h2>{needAttention}</h2>
+                    <p>Need Attention</p>
                 </div>
                 <div className='  p-4 w-full  justify-center py-6 flex flex-col items-center  bg-white border border-gray-100 shadow-md rounded-xl'>
-                    <h2>10</h2>
-                    <p>Total Friends</p>
+                    <h2>{interactionsThisMonth}</h2>
+                    <p>Interactions This Month</p>
                 </div>
             </div>
         </div>

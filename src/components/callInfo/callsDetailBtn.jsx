@@ -21,7 +21,7 @@ const CallDetails = ({ friend }) => {
 
         setCalls([...calls, newCall]);
 
-        // 🔥 TOAST
+     
     if (type === "Call") toast.success("📞 Call logged!");
     if (type === "Text") toast.info("💬 Text sent!");
     if (type === "Video") toast("📹 Video call added!");
