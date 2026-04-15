@@ -28,11 +28,11 @@ const Stats = () => {
     ];
     return (
         <div className='container mx-auto py-10 px-5'>
-            <h2 className=' text-4xl font-bold py-10 text-center md:text-left'>Friendship Analytics</h2>
+            <h2 className=' text-4xl font-bold py-10 text-center md:text-left text-[#244D3F]'>Friendship Analytics</h2>
             
-            <div className='border-slate-200 border shadow p-5'>
-                <p className=' text-xl font-bold'>By Interaction Type</p>
-                <div className=' flex justify-center items-center  p-10 rounded-md '>
+            <div className='border-[#244D3F] border shadow p-5 rounded-md'>
+                <p className=' text-xl font-bold text-gray-500'>By Interaction Type</p>
+                <div className=' flex justify-center items-center  p-10  '>
                 <PieChart style={{ width: '100%', maxWidth: '500px', maxHeight: '80vh', aspectRatio: 1 }} responsive>
                     <Pie
                         data={data}
