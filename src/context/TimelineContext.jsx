@@ -4,9 +4,9 @@
 
 import React, { createContext, useState } from 'react';
 
-export { TimelineContext }
-
 const TimelineContext = createContext();
+export { TimelineContext };
+
 const TimelineProvider = ({children}) => {
     const [calls, setCalls] = useState([]);
     const data = {
