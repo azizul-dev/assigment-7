@@ -21,7 +21,7 @@ const Stats = () => {
 
 
     const data = [
-        { name: 'Call', value: callCount, fill: '#0088FE' },
+        { name: 'Call', value: callCount, fill: '#244D3F' },
         { name: 'Text', value: textCount, fill: '#00C49F' },
         { name: 'Video', value: videoCount, fill: '#FFBB28' },
 
@@ -29,7 +29,10 @@ const Stats = () => {
     return (
         <div className='container mx-auto py-10 px-5'>
             <h2 className=' text-4xl font-bold py-10 text-center md:text-left'>Friendship Analytics</h2>
-            <div className=' flex justify-center items-center shadow p-10 rounded-md border-slate-200 border'>
+            
+            <div className='border-slate-200 border shadow p-5'>
+                <p className=' text-xl font-bold'>By Interaction Type</p>
+                <div className=' flex justify-center items-center  p-10 rounded-md '>
                 <PieChart style={{ width: '100%', maxWidth: '500px', maxHeight: '80vh', aspectRatio: 1 }} responsive>
                     <Pie
                         data={data}
@@ -47,6 +50,7 @@ const Stats = () => {
                     <Legend />
                     <Tooltip />
                 </PieChart>
+            </div>
             </div>
         </div>
     );

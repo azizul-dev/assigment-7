@@ -25,19 +25,19 @@ const Banner = ({friends}) => {
                     <button className=' bg-[#244D3F] text-white py-2 px-4 rounded-md'>+ Add a Friend</button>
             </div>
             <div className=' grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-4 '>
-                <div className='  p-4 w-full justify-center py-6 flex flex-col items-center  bg-white border border-gray-100 shadow-md rounded-xl'>
+                <div className=' font-bold text-xl  p-4 w-full justify-center py-6 flex flex-col items-center   border border-[#244D3F] shadow-md rounded-xl'>
                     <h2>{totalFriends}</h2>
                     <p>Total Friends</p>
                 </div>
-                <div className='p-4 w-full py-6 flex justify-center flex-col items-center   bg-white border border-gray-100 shadow-md rounded-xl'>
+                <div className='p-4 w-full py-6 font-bold text-xl flex justify-center flex-col items-center    border  shadow-md rounded-xl border-[#244D3F]'>
                     <h2>{onTrack}</h2>
                     <p>On Track</p>
                 </div>
-                <div className='  p-4 w-full py-6 flex justify-center  flex-col items-center  bg-white border border-gray-100 shadow-md rounded-xl'>
+                <div className='  p-4 w-full py-6  font-bold text-xl flex justify-center  flex-col items-center t   border border-[#244D3F] shadow-md rounded-xl'>
                     <h2>{needAttention}</h2>
                     <p>Need Attention</p>
                 </div>
-                <div className='  p-4 w-full  justify-center py-6 flex flex-col items-center  bg-white border border-gray-100 shadow-md rounded-xl'>
+                <div className='  p-4 w-full font-bold text-xl  justify-center py-6 flex flex-col items-center     border border-[#244D3F] shadow-md rounded-xl'>
                     <h2>{interactionsThisMonth}</h2>
                     <p>Interactions This Month</p>
                 </div>
