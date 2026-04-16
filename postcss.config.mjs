@@ -1,9 +1,8 @@
-const nextConfig = {
-    // ✅ workspace root warning ঠিক করো
-    turbopack: {
-        root: __dirname,
-    },
-    images: {
+const config = {
+  plugins: {
+    "@tailwindcss/postcss": {},
+  },
+  images: {
         remotePatterns: [
             {
                 protocol: "https",
@@ -13,4 +12,4 @@ const nextConfig = {
     },
 };
 
-export default nextConfig;
+export default config;
