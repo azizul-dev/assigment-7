@@ -1,7 +1,16 @@
-const config = {
-  plugins: {
-    "@tailwindcss/postcss": {},
-  },
+const nextConfig = {
+    // ✅ workspace root warning ঠিক করো
+    turbopack: {
+        root: __dirname,
+    },
+    images: {
+        remotePatterns: [
+            {
+                protocol: "https",
+                hostname: "**",
+            },
+        ],
+    },
 };
 
-export default config;
+export default nextConfig;
