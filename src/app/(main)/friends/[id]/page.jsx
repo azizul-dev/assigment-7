@@ -1,4 +1,4 @@
-// app/friends/[id]/page.jsx
+
 import CallDetails from '@/components/callInfo/callsDetailBtn';
 import Image from 'next/image';
 import React from 'react';
@@ -60,9 +60,9 @@ const FriendsDetailPage = async ({ params }) => {
                         </span>
 
                         <div className='flex flex-wrap justify-center gap-1'>
-                            {friend.tags.map((tag, i) => (
+                            {friend.tags.map((tag, ind) => (
                                 <span
-                                    key={i}
+                                    key={ind}
                                     className='text-green-700 text-xs px-3 py-1 rounded-full uppercase font-medium'
                                     style={{ backgroundColor: "#DCFCE7" }}
                                 >
@@ -141,26 +141,7 @@ const FriendsDetailPage = async ({ params }) => {
                         </p>
                     </div>
 
-
-                    {/* <div className='bg-white rounded-xl shadow p-5'>
-                        <h3 className='font-bold text-lg mb-3'>Quick Check-In</h3>
-                        <div className='grid grid-cols-3 gap-3'>
-                            <button className='border rounded-xl py-4 flex flex-col items-center gap-1 hover:bg-gray-50'>
-                                <span className='text-xl'><MdAddCall /></span>
-                                <span className='text-sm'>Call</span>
-                            </button>
-                            <button className='border rounded-xl py-4 flex flex-col items-center gap-1 hover:bg-gray-50'>
-                                <span className='text-xl'><IoMdText /></span>
-                                <span className='text-sm'>Text</span>
-                            </button>
-                            <button className='border rounded-xl py-4 flex flex-col items-center gap-1 hover:bg-gray-50'>
-                                <span className='text-xl'><MdMissedVideoCall /></span>
-                                <span className='text-sm'>Video</span>
-                            </button>
-                        </div>
-                    </div> */}
                     <CallDetails friend={friend}/>
-
 
                     <div className='bg-white rounded-xl shadow p-5'>
                         <div className='flex justify-between items-center mb-3'>
@@ -171,9 +152,9 @@ const FriendsDetailPage = async ({ params }) => {
                         </div>
 
                         {friend.interactions?.length > 0 ? (
-                            friend.interactions.map((item, i) => (
+                            friend.interactions.map((item, ind) => (
                                 <div
-                                    key={i}
+                                    key={ind}
                                     className='flex items-center justify-between py-3 border-b last:border-b-0 gap-3'
                                 >
                                     <div className='flex items-center gap-3'>

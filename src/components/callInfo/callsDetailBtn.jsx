@@ -13,7 +13,7 @@ const CallDetails = ({ friend }) => {
 
     const handleCheck = (type) => {
         const newCall = {
-            ...friend,
+            friend,
             type: type,
             date: new Date().toISOString()
             
