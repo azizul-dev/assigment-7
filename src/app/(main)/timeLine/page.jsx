@@ -34,7 +34,6 @@ const TimelinePage = () => {
             <div className="max-w-2xl mx-auto">
 
                 <h1 className="text-2xl font-bold mb-4">Timeline</h1>
-                return (
                 <div className="min-h-screen p-6">
                     <div className="max-w-2xl mx-auto">
 
@@ -44,7 +43,7 @@ const TimelinePage = () => {
                         <div className="mb-4 flex items-start gap-2">
 
                             {open && (
-                                <div className="flex flex-col border  z-10 bg-gray-800">
+                                <div className="flex flex-col border  z-10 bg-gray-800 electric-glow">
                                     <p onClick={() => { setFilter("All"); setOpen(false); }}
                                         className="px-4 py-2 hover:bg-gray-600 cursor-pointer">All</p>
                                     <p onClick={() => { setFilter("Call"); setOpen(false); }}
@@ -58,7 +57,7 @@ const TimelinePage = () => {
 
                             <div
                                 onClick={() => setOpen(!open)}
-                                className="flex-1 border rounded-xl px-4 py-3 flex justify-between items-center shadow-sm cursor-pointer"
+                                className="flex-1  electric-glow rounded-xl px-4 py-3 flex justify-between items-center cursor-pointer"
                             >
                                 <span>{filter}</span>
                                 <span>⌄</span>
