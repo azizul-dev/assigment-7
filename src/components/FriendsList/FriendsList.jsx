@@ -54,14 +54,14 @@ const FriendsList = ({ friends }) => {
                                 <span
                                     key={i}
                                     className='text-green-700 px-3 py-2 rounded-md whitespace-nowrap md:whitespace-normal'
-                                    style={{ backgroundColor: "#DCFCE7" }}
+                                    style={{ backgroundColor: "#021f16" }}
                                 >
                                     {tag}
                                 </span>
                             ))}
                         </div>
                         <span
-                            className={`text-xs px-4 py-1 rounded-full font-semibold capitalize ${getStatusStyle(friend.status).className}`}
+                            className={` animate-pulse text-xs px-4 py-1 rounded-full font-semibold capitalize ${getStatusStyle(friend.status).className}`}
                             style={getStatusStyle(friend.status).style}
                         >
                             {friend.status}
