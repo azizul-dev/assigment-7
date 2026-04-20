@@ -1,12 +1,12 @@
 [
   {
     "id": 1,
-    "name": "Azizul islam",
-    "picture": "https://i.ibb.co.com/CpQhV4MH/Gemini-Generated-Image-ma1rvyma1rvyma1r.png",
+    "name": "Azizul Islam",
+    "picture": "https://randomuser.me/api/portraits/men/1.jpg",
     "email": "abdulazizabdul8822@gmail.com",
     "days_since_contact": 0,
     "status": "on-track",
-    "tags": ["me", "owner"],
+    "tags": ["owner", "developer"],
     "bio": "Studying at Satkhira Polytechnic Institute, currently in 7th semester. Passionate about mobile app development and always learning new things in tech. A simple, kind-hearted person who believes in honest hard work.",
     "goal": 7,
     "next_due_date": "2026-04-27",
@@ -249,7 +249,7 @@
     "interactions": [
       { "type": "Text", "note": "She shared a data science resource", "date": "2026-04-04" },
       { "type": "Call", "note": "Talked about switching careers to tech", "date": "2026-03-20" },
-      { "type": "Meetup", "note": "Coffee at a café in Banani", "date": "2026-03-08" }
+      { "type": "Meetup", "note": "Coffee at a cafe in Banani", "date": "2026-03-08" }
     ]
   },
   {
@@ -328,7 +328,7 @@
     "days_since_contact": 12,
     "status": "almost due",
     "tags": ["college", "close friend"],
-    "bio": "We met at a college debate competition and have been arguing about everything ever since — in the best possible way. He is now a journalist in Dhaka.",
+    "bio": "We met at a college debate competition and have been arguing about everything ever since in the best possible way. He is now a journalist in Dhaka.",
     "goal": 14,
     "next_due_date": "2026-04-27",
     "interactions": [
