@@ -1,15 +1,11 @@
 "use client"
 
 
+import ElectricBorder from '@/components/ElectricBorder';
 import { TimelineContext } from '@/context/TimelineContext';
 import React, { useContext } from 'react';
 import { Legend, Pie, PieChart, Tooltip } from 'recharts';
 
-// import { RechartsDevtools } from '@recharts/devtools';
-
-// export const metadata = {
-//     title: "KeenKeeper | Stats Page",
-// };
 
 const Stats = () => {
     const {calls} = useContext(TimelineContext);
@@ -21,37 +17,39 @@ const Stats = () => {
 
 
     const data = [
-        { name: 'Call', value: callCount, fill: '#244D3F' },
+        { name: 'Call', value: callCount, fill: '#08c082' },
         { name: 'Text', value: textCount, fill: '#00C49F' },
         { name: 'Video', value: videoCount, fill: '#FFBB28' },
 
     ];
     return (
         <div className='container mx-auto py-10 px-5'>
-            <h2 className=' text-4xl font-bold py-10 text-center md:text-left text-[#244D3F]'>Friendship Analytics</h2>
-            
-            <div className='border-[#244D3F] border shadow p-5 rounded-md'>
-                <p className=' text-xl font-bold text-gray-500'>By Interaction Type</p>
-                <div className=' flex justify-center items-center  p-10  '>
-                <PieChart style={{ width: '100%', maxWidth: '500px', maxHeight: '80vh', aspectRatio: 1 }} responsive>
-                    <Pie
-                        data={data}
-                        innerRadius="60%"
-                        outerRadius="80%"
-                        
-                        cornerRadius="50%"
-                        fill="#8884d8"
-                       
-                        paddingAngle={5}
-                        dataKey="value"
-                        isAnimationActive={true}
-                    />
-                   
-                    <Legend />
-                    <Tooltip />
-                </PieChart>
-            </div>
-            </div>
+            <h2 className=' text-4xl font-bold py-10 text-center md:text-left text-[#07ba7e]'>Friendship Analytics</h2>
+            <ElectricBorder>
+    <div className='p-5'>
+        <p className='text-xl font-bold text-gray-300 mb-4'>By Interaction Type</p>
+        <div className='flex justify-center items-center'>
+
+           
+            <PieChart width={400} height={400}>
+                <Pie
+                    data={data}
+                    cx="50%"
+                    cy="50%"
+                    innerRadius={80}
+                    outerRadius={130}
+                    cornerRadius={10}
+                    paddingAngle={5}
+                    dataKey="value"
+                    isAnimationActive={true}
+                />
+                <Legend />
+                <Tooltip />
+            </PieChart>
+
+        </div>
+    </div>
+</ElectricBorder>
         </div>
     );
 };

@@ -6,7 +6,7 @@ import React from 'react';
 
 const MyLink = ({href, children}) => {
     const pathname = usePathname();
-    return ( <Link href={href} className={`${pathname === href ? " bg-[#244D3F] text-white": "" }`}>{children}</Link>
+    return ( <Link href={href} className={`${pathname === href ? " bg-[#03c081] text-white": "" }`}>{children}</Link>
     );
 };
 

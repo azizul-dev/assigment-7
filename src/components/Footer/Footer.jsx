@@ -9,7 +9,7 @@ const Footer = () => {
     return (
         <div>
 
-        <footer className="w-full bg-[#244D3F] text-white p-10 text-center overflow-hidden">
+        <footer className="w-full bg-[#021f1657] rounded-md text-white p-10 text-center overflow-hidden electric-glow">
             <aside>
                 <div className='space-y-4'>
                     <h2 className='font-bold text-5xl text-center '>KeenKeeper</h2>
@@ -22,7 +22,7 @@ const Footer = () => {
                         <span className=' bg-white p-2 rounded-full text-black'><FaFacebookSquare /></span>
                         <span className=' bg-white p-2 rounded-full text-black'><FaXTwitter /></span>
                     </div>
-                    <hr className='bg-zinc-600' />
+                    <hr className='bg-zinc-600 electric-glow ' />
 
 
                     <div className='flex flex-col md:flex-row justify-center md:justify-between items-center gap-3'>

@@ -1,2 +1,304 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+
+/* ============================================
+   Electric Border - Friends Card CSS
+   Import this in your component or globals.css
+   ============================================ */
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+/* ---------- Grid ---------- */
+.friends-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 24px;
+  padding: 8px 0;
+}
+
+@media (min-width: 768px) {
+  .friends-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1024px) {
+  .friends-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* ---------- Outer wrapper (the electric border layer) ---------- */
+.electric-wrapper {
+  position: relative;
+  border-radius: 20px;
+  padding: 2px;
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+  background: transparent;
+  animation: border-flicker 5s ease-in-out infinite;
+  height: 100%;
+}
+
+/* The rotating conic-gradient ring */
+.electric-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 22px;
+  background: conic-gradient(
+    from var(--angle),
+    transparent 0deg,
+    #00eeff 60deg,
+    #ffffff 90deg,
+    #00eeff 120deg,
+    transparent 180deg,
+    #0055ff 240deg,
+    #00eeff 300deg,
+    transparent 360deg
+  );
+  animation: rotate-ring 3s linear infinite, border-flicker 5s ease-in-out infinite;
+  z-index: 0;
+}
+
+/* Outer glow layer */
+.electric-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 24px;
+  background: conic-gradient(
+    from var(--angle),
+    transparent 0deg,
+    #00eeff33 60deg,
+    #00eeff55 90deg,
+    #00eeff33 120deg,
+    transparent 200deg,
+    #0055ff22 260deg,
+    transparent 360deg
+  );
+  animation: rotate-ring 3s linear infinite;
+  filter: blur(6px);
+  z-index: 0;
+}
+
+/* ---------- Inner card ---------- */
+.electric-inner {
+  position: relative;
+  z-index: 2;
+  background: #050d1a;
+  border-radius: 18px;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  overflow: hidden;
+  height: 100%;
+  justify-content: flex-start;
+}
+
+/* top glow radial */
+.electric-inner::before {
+  content: '';
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 160px;
+  height: 80px;
+  background: radial-gradient(ellipse, #00eeff18 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ---------- Arc SVG overlay ---------- */
+.arc-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.arc {
+  fill: none;
+  stroke-width: 1.5;
+  stroke-dasharray: 300;
+  filter: drop-shadow(0 0 3px currentColor) drop-shadow(0 0 6px currentColor);
+}
+
+.arc-top {
+  stroke: #00eeff;
+  stroke-dashoffset: 300;
+  animation: arc-draw 4s ease-in-out infinite 0s;
+}
+.arc-right {
+  stroke: #ffffff;
+  stroke-width: 1;
+  stroke-dashoffset: 300;
+  animation: arc-draw 4s ease-in-out infinite 1.3s;
+}
+.arc-bottom {
+  stroke: #00bbff;
+  stroke-dashoffset: 300;
+  animation: arc-draw 4s ease-in-out infinite 2.2s;
+}
+.arc-left {
+  stroke: #88ccff;
+  stroke-width: 1;
+  stroke-dashoffset: 300;
+  animation: arc-draw 4s ease-in-out infinite 3s;
+}
+
+/* ---------- Corner sparks ---------- */
+.spark {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #00eeff;
+  z-index: 4;
+  box-shadow: 0 0 6px 2px #00eeff, 0 0 14px 4px #0088ff;
+}
+
+.spark-tl { top: -1px; left: -1px; animation: spark-pulse 2s ease-in-out infinite 0s; }
+.spark-tr { top: -1px; right: -1px; animation: spark-pulse 2s ease-in-out infinite 0.6s; }
+.spark-bl { bottom: -1px; left: -1px; animation: spark-pulse 2s ease-in-out infinite 1.1s; }
+.spark-br { bottom: -1px; right: -1px; animation: spark-pulse 2s ease-in-out infinite 1.7s; }
+
+/* ---------- Lightning bolts ---------- */
+.bolt {
+  position: absolute;
+  z-index: 4;
+  pointer-events: none;
+  filter: drop-shadow(0 0 4px #00eeff) drop-shadow(0 0 10px #0055ff);
+}
+
+.bolt-one {
+  width: 16px;
+  height: 24px;
+  top: 12px;
+  left: 14px;
+  animation: bolt-flash 4s ease-in-out infinite 0.5s;
+}
+
+.bolt-two {
+  width: 12px;
+  height: 20px;
+  bottom: 16px;
+  right: 16px;
+  animation: bolt-flash 4s ease-in-out infinite 2s;
+}
+
+/* ---------- Card content styles ---------- */
+.friend-avatar {
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #00eeff33;
+  position: relative;
+  z-index: 1;
+}
+
+.friend-name {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #d0f0ff;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.friend-days {
+  font-size: 0.8rem;
+  color: #4a7a9b;
+  position: relative;
+  z-index: 1;
+}
+
+.friend-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  position: relative;
+  z-index: 1;
+}
+
+.tag {
+  background: #00eeff14;
+  color: #00eeff;
+  border: 1px solid #00eeff33;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+
+.status-badge {
+  font-size: 0.7rem;
+  padding: 4px 14px;
+  border-radius: 99px;
+  font-weight: 600;
+  color: white;
+  position: relative;
+  z-index: 1;
+  text-transform: capitalize;
+  letter-spacing: 0.03em;
+}
+
+/* ---------- Keyframes ---------- */
+@keyframes rotate-ring {
+  to { --angle: 360deg; }
+}
+
+@keyframes border-flicker {
+  0%, 100% { opacity: 1; }
+  48%       { opacity: 1; }
+  50%       { opacity: 0.3; }
+  51%       { opacity: 1; }
+  78%       { opacity: 1; }
+  80%       { opacity: 0.5; }
+  81%       { opacity: 1; }
+}
+
+@keyframes arc-draw {
+  0%         { stroke-dashoffset: 300; opacity: 0; }
+  5%         { opacity: 1; }
+  45%        { stroke-dashoffset: 0; opacity: 1; }
+  65%        { opacity: 0; }
+  100%       { opacity: 0; stroke-dashoffset: 0; }
+}
+
+@keyframes spark-pulse {
+  0%, 100% { transform: scale(1);   opacity: 1; }
+  40%      { transform: scale(1.8); opacity: 1; box-shadow: 0 0 12px 5px #00eeff; }
+  42%      { transform: scale(0.5); opacity: 0.4; }
+  44%      { transform: scale(2);   opacity: 1; }
+  50%      { transform: scale(1);   opacity: 0.7; }
+}
+
+@keyframes bolt-flash {
+  0%, 100% { opacity: 0; }
+  4%        { opacity: 1; }
+  7%        { opacity: 0.2; }
+  9%        { opacity: 1; }
+  14%       { opacity: 0; }
+  58%       { opacity: 0; }
+  60%       { opacity: 1; }
+  63%       { opacity: 0; }
+}
+/* globals.css এ যোগ করো */
+.electric-glow {
+    border: 1px solid rgba(0, 229, 255, 0.5);
+    box-shadow: 0 0 10px rgba(0, 229, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.electric-glow:hover {
+    border-color: rgb(0, 229, 255);
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.6);
+}

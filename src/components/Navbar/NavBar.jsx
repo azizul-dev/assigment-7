@@ -29,8 +29,8 @@ const NavBar = () => {
 
 
     return (
-        <div className=' sticky top-0 z-50'>
-            <div className="navbar bg-base-100 shadow-sm">
+        <div className=' sticky top-0 z-50 '>
+            <div className="navbar bg-base-100 shadow-sm electric-glow rounded-md">
 
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -49,7 +49,7 @@ const NavBar = () => {
                     </div>
 
                     <Link href={"/"} className="btn btn-ghost font-bold text-3xl">
-                        Keen<span className='text-[#244D3F]'>Keeper</span>
+                        Keen<span className='text-[#00ffaa]'>Keeper</span>
                     </Link>
                 </div>
 

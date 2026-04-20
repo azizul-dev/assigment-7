@@ -5,6 +5,7 @@ import { TimelineContext } from '@/context/TimelineContext';
 import { IoMdText } from 'react-icons/io';
 import { MdAddCall, MdMissedVideoCall } from 'react-icons/md';
 import { FaHandshake } from 'react-icons/fa';
+import ElectricBorder from '@/components/ElectricBorder';
 
 
 const TimelinePage = () => {
@@ -29,101 +30,71 @@ const TimelinePage = () => {
 
 
     return (
-        <div className="min-h-screen bg-[#f0f4f3] p-6">
+        <div className="min-h-screen  p-6">
             <div className="max-w-2xl mx-auto">
 
                 <h1 className="text-2xl font-bold mb-4">Timeline</h1>
-                <div className="mb-4 relative">
+                return (
+                <div className="min-h-screen p-6">
+                    <div className="max-w-2xl mx-auto">
 
-                    <div
-                        onClick={() => setOpen(!open)}
-                        className="w-full bg-white border rounded-xl px-4 py-3 flex justify-between items-center shadow-sm cursor-pointer"
-                    >
-                        <span className="text-gray-500">{filter}</span>
-                        <span>⌄</span>
-                    </div>
-
-                    {
-                        open && (
-                            <div className="absolute mt-2 w-full bg-white border rounded-xl shadow-md z-10">
-                                <p
-                                    onClick={() => {
-                                        setFilter("All");
-                                        setOpen(false);
-                                    }}
-                                    className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
-                                >
-                                    All
-                                </p>
-
-                                <p
-                                    onClick={() => {
-                                        setFilter("Call");
-                                        setOpen(false);
-                                    }}
-                                    className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
-                                >
-                                    Call
-                                </p>
-
-                                <p
-                                    onClick={() => {
-                                        setFilter("Text");
-                                        setOpen(false);
-                                    }}
-                                    className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
-                                >
-                                    Text
-                                </p>
-
-                                <p
-                                    onClick={() => {
-                                        setFilter("Video");
-                                        setOpen(false);
-                                    }}
-                                    className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
-                                >
-                                    Video
-                                </p>
-                            </div>
-                        )
-                    }
-
-                </div>
+                        <h1 className="text-2xl font-bold mb-4">Timeline</h1>
 
 
-                {
-                    calls.length === 0 && (
-                        <p className="text-gray-500">No interactions yet</p>
-                    )
-                }
+                        <div className="mb-4 flex items-start gap-2">
 
+                            {open && (
+                                <div className="flex flex-col border  z-10 bg-gray-800">
+                                    <p onClick={() => { setFilter("All"); setOpen(false); }}
+                                        className="px-4 py-2 hover:bg-gray-600 cursor-pointer">All</p>
+                                    <p onClick={() => { setFilter("Call"); setOpen(false); }}
+                                        className="px-4 py-2 hover:bg-gray-600 cursor-pointer">Call</p>
+                                    <p onClick={() => { setFilter("Text"); setOpen(false); }}
+                                        className="px-4 py-2 hover:bg-gray-600 cursor-pointer">Text</p>
+                                    <p onClick={() => { setFilter("Video"); setOpen(false); }}
+                                        className="px-4 py-2 hover:bg-gray-600 cursor-pointer">Video</p>
+                                </div>
+                            )}
 
-                {
-                    filteredCalls.map((item, index) => (
-                        <div
-                            key={index}
-                            className="flex items-center gap-4 bg-gray-50 border rounded-xl p-4 mb-3"
-                        >
-                            <div className="w-10 h-10 flex items-center justify-center bg-white rounded-full shadow">
-                                {getIcon(item.type)}
+                            <div
+                                onClick={() => setOpen(!open)}
+                                className="flex-1 border rounded-xl px-4 py-3 flex justify-between items-center shadow-sm cursor-pointer"
+                            >
+                                <span>{filter}</span>
+                                <span>⌄</span>
                             </div>
 
-                            <div>
-                                <p className="text-sm font-medium text-gray-700">
-                                    <span className="font-semibold">{item.type}</span> with {item.name}
-                                </p>
-                                <p className="text-xs text-gray-400">
-                                    {new Date(item.date).toLocaleDateString('en-US', {
-                                        month: 'long',
-                                        day: 'numeric',
-                                        year: 'numeric'
-                                    })}
-                                </p>
-                            </div>
                         </div>
-                    ))
-                }
+
+
+                        {calls.length === 0 && (
+                            <p className="">No interactions yet</p>
+                        )}
+
+                        {filteredCalls.map((item, index) => (
+                            <ElectricBorder key={index}>
+                                <div className="flex items-center gap-4">
+                                    <div className="w-10 h-10 flex items-center justify-center rounded-full shadow">
+                                        {getIcon(item.type)}
+                                    </div>
+                                    <div>
+                                        <p className="text-sm font-medium">
+                                            <span className="font-semibold">{item.type}</span> with {item.name}
+                                        </p>
+                                        <p className="text-xs">
+                                            {new Date(item.date).toLocaleDateString('en-US', {
+                                                month: 'long',
+                                                day: 'numeric',
+                                                year: 'numeric'
+                                            })}
+                                        </p>
+                                    </div>
+                                </div>
+                            </ElectricBorder>
+                        ))}
+
+                    </div>
+                </div>
 
             </div>
         </div>

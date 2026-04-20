@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
+import ElectricBorder from '../ElectricBorder';
 
 
 const getStatusStyle = (status) => {
@@ -27,13 +28,13 @@ const FriendsList = ({ friends }) => {
 
         <div className=' container mx-auto'>
             <h2 className=' font-bold text-2xl'>Your Friends</h2>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-4  p-4'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-4  p-4 items-stretch'>
 
                 {friends.map((friend, index) => (
 
-                    <Link href={`/friends/${friend.id}`} key={index} className='bg-white shadow-md rounded-xl p-5 flex flex-col items-center gap-2 space-y-4'>
-
-
+                    <Link href={`/friends/${friend.id}`} key={index} className=' block h-full'>
+                        
+                        <ElectricBorder>
                         <Image
                             src={friend.picture}
                             alt={friend.name}
@@ -65,7 +66,7 @@ const FriendsList = ({ friends }) => {
                         >
                             {friend.status}
                         </span>
-
+                           </ElectricBorder> 
                     </Link>
                 ))}
             </div>

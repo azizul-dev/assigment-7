@@ -1,5 +1,6 @@
 
 import CallDetails from '@/components/callInfo/callsDetailBtn';
+import ElectricBorder from '@/components/ElectricBorder';
 import Image from 'next/image';
 import React from 'react';
 import { FaArchive, FaHandshake, FaVideo } from 'react-icons/fa';
@@ -33,7 +34,7 @@ const FriendsDetailPage = async ({ params }) => {
     const friend = friends.find((friend) => friend.id == id);
 
     return (
-        <div className='min-h-screen bg-[#f0f4f3] p-4 md:p-6 '>
+        <div className='min-h-screen  p-4 md:p-6 '>
 
             <div
                 style={{ maxWidth: '1400px', margin: '0 auto' }}
@@ -43,61 +44,63 @@ const FriendsDetailPage = async ({ params }) => {
 
                 <div className='md:col-span-4 flex flex-col gap-4'>
 
-                    <div className='bg-white rounded-xl shadow p-6 flex flex-col items-center gap-2'>
-                        <Image
-                            src={friend.picture}
-                            alt={friend.name}
-                            width={96}
-                            height={96}
-                            className='rounded-full object-cover w-24 h-24'
-                        />
-                        <h2 className='font-bold text-xl'>{friend.name}</h2>
-                        <span
-                            className={`text-xs px-3 py-1 rounded-full font-semibold capitalize ${getStatusStyle(friend.status).className}`}
-                            style={getStatusStyle(friend.status).style}
-                        >
-                            {friend.status}
-                        </span>
+                    <div className='  p-6 flex flex-col items-center gap-2'>
+                        <ElectricBorder>
+                            <Image
+                                src={friend.picture}
+                                alt={friend.name}
+                                width={96}
+                                height={96}
+                                className='rounded-full object-cover w-24 h-24'
+                            />
+                            <h2 className='font-bold text-xl'>{friend.name}</h2>
+                            <span
+                                className={`text-xs px-3 py-1 rounded-full font-semibold capitalize ${getStatusStyle(friend.status).className}`}
+                                style={getStatusStyle(friend.status).style}
+                            >
+                                {friend.status}
+                            </span>
 
-                        <div className='flex flex-wrap justify-center gap-1'>
-                            {friend.tags.map((tag, ind) => (
-                                <span
-                                    key={ind}
-                                    className='text-green-700 text-xs px-3 py-1 rounded-full uppercase font-medium'
-                                    style={{ backgroundColor: "#DCFCE7" }}
-                                >
-                                    {tag}
-                                </span>
-                            ))}
-                        </div>
+                            <div className='flex flex-wrap justify-center gap-1'>
+                                {friend.tags.map((tag, ind) => (
+                                    <span
+                                        key={ind}
+                                        className='text-green-700 text-xs px-3 py-1 rounded-full uppercase font-medium'
+                                        style={{ backgroundColor: "#DCFCE7" }}
+                                    >
+                                        {tag}
+                                    </span>
+                                ))}
+                            </div>
 
-                        <p className='text-sm text-gray-500 italic text-center'>
-                            {friend.bio}
-                        </p>
-                        <p className='text-sm text-gray-500'>
-                            Preferred: {friend.email}
-                        </p>
+                            <p className='text-sm text-gray-500 italic text-center'>
+                                {friend.bio}
+                            </p>
+                            <p className='text-sm text-gray-500'>
+                                Preferred: {friend.email}
+                            </p>
+                        </ElectricBorder>
                     </div>
 
 
-                    <div className='bg-white rounded-xl shadow divide-y'>
-                        <button className='w-full text-sm p-4 hover:bg-gray-50 flex items-center justify-center gap-2'>
-                            <HiBellSnooze /> Snooze 2 Weeks
+                    <div className=' divide-y '>
+                        <button className='w-full text-sm p-4 electric-glow flex items-center justify-center gap-2'>
+                            <HiBellSnooze className=' electric-glow'/> Snooze 2 Weeks
                         </button>
-                        <button className='w-full flex items-center justify-center gap-2 text-sm p-4 hover:bg-gray-50'>
-                            <FaArchive /> Archive
+                        <button className='w-full flex items-center electric-glow justify-center gap-2 text-sm p-4 '>
+                            <FaArchive className=' electric-glow'/> Archive
                         </button>
-                        <button className='w-full text-sm p-4 flex items-center justify-center gap-2 text-red-500 hover:bg-gray-50'>
-                            <MdDeleteSweep /> Delete
+                        <button className='w-full text-sm p-4 flex electric-glow items-center justify-center gap-2 text-red-500 '>
+                            <MdDeleteSweep className=' electric-glow'/> Delete
                         </button>
                     </div>
 
                 </div>
 
                 <div className='md:col-span-8 flex flex-col gap-4'>
-                    <div className='grid grid-cols-1 sm:grid-cols-3 gap-4'>
-                        <div className='bg-white rounded-xl shadow p-4 text-center'>
-                            <h3 className='text-3xl font-bold text-[#244D3F]'>
+                    <div className='grid grid-cols-1 sm:grid-cols-3 gap-4 electric-glow rounded-xl'>
+                        <div className=' rounded-xl shadow p-4 text-center'>
+                            <h3 className='text-3xl font-bold text-[#08c082]'>
                                 {friend.days_since_contact}
                             </h3>
                             <p className='text-sm text-gray-400 mt-1'>
@@ -105,8 +108,8 @@ const FriendsDetailPage = async ({ params }) => {
                             </p>
                         </div>
 
-                        <div className='bg-white rounded-xl shadow p-4 text-center'>
-                            <h3 className='text-3xl font-bold text-[#244D3F]'>
+                        <div className=' rounded-xl shadow p-4 text-center'>
+                            <h3 className='text-3xl font-bold text-[#0cae78]'>
                                 {friend.goal}
                             </h3>
                             <p className='text-sm text-gray-400 mt-1'>
@@ -114,8 +117,8 @@ const FriendsDetailPage = async ({ params }) => {
                             </p>
                         </div>
 
-                        <div className='bg-white rounded-xl shadow p-4 text-center'>
-                            <h3 className='text-xl font-bold text-[#244D3F]'>
+                        <div className=' rounded-xl shadow p-4 text-center'>
+                            <h3 className='text-xl font-bold text-[#0db57d]'>
                                 {new Date(friend.next_due_date).toLocaleDateString('en-US', {
                                     month: 'short',
                                     day: 'numeric',
@@ -128,25 +131,28 @@ const FriendsDetailPage = async ({ params }) => {
                         </div>
                     </div>
 
-
-                    <div className='bg-white rounded-xl shadow p-5'>
-                        <div className='flex justify-between items-center'>
-                            <h3 className='font-bold text-lg'>Relationship Goal</h3>
-                            <button className='border text-sm px-3 py-1 rounded-md hover:bg-gray-50'>
-                                Edit
-                            </button>
-                        </div>
-                        <p className='text-gray-500 mt-2'>
+                    <div>
+                        <p className='text-gray-500'>
                             Connect every <strong>{friend.goal} days</strong>
                         </p>
                     </div>
+                    <div className=' rounded-xl shadow p-5 electric-glow'>
+                        <div className='flex justify-between items-center  '>
+                            <h3 className='font-bold text-lg'>Relationship Goal</h3>
+                            <button className='border text-sm px-3 py-1 rounded-md hover:bg-gray-600'>
+                                Edit
+                            </button>
+                        </div>
 
-                    <CallDetails friend={friend}/>
+                    </div>
 
-                    <div className='bg-white rounded-xl shadow p-5'>
+
+                    <CallDetails friend={friend} />
+
+                    <div className=' rounded-xl shadow p-5 space-y-4'>
                         <div className='flex justify-between items-center mb-3'>
                             <h3 className='font-bold text-lg'>Recent Interactions</h3>
-                            <button className='border text-sm px-3 py-1 rounded-md hover:bg-gray-50 flex gap-1 items-center'>
+                            <button className='electric-glow  text-sm px-3 py-1 rounded-md hover:bg-gray-600 flex gap-1 items-center'>
                                 <IoTime /> Full History
                             </button>
                         </div>
@@ -155,14 +161,14 @@ const FriendsDetailPage = async ({ params }) => {
                             friend.interactions.map((item, ind) => (
                                 <div
                                     key={ind}
-                                    className='flex items-center justify-between py-3 border-b last:border-b-0 gap-3'
+                                    className='flex items-center justify-between py-3 border-b last:border-b-0 gap-3 electric-glow p-5 rounded-md'
                                 >
                                     <div className='flex items-center gap-3'>
                                         <span>
-                                            {item.type === 'Text' ? <IoMdText /> :
-                                                item.type === 'Meetup' ? <FaHandshake /> :
-                                                    item.type === 'Call' ? <MdAddCall /> :
-                                                        item.type === 'Video' ? <FaVideo /> : <FiEdit />}
+                                            {item.type === 'Text' ? <IoMdText  className=' electric-glow'/> :
+                                                item.type === 'Meetup' ? <FaHandshake className=' electric-glow'/> :
+                                                    item.type === 'Call' ? <MdAddCall className=' electric-glow'/> :
+                                                        item.type === 'Video' ? <FaVideo className=' electric-glow'/> : <FiEdit />}
                                         </span>
                                         <div>
                                             <p className='text-sm font-medium'>{item.type}</p>
