@@ -52,6 +52,7 @@ const FriendsDetailPage = async ({ params }) => {
                                 width={96}
                                 height={96}
                                 className='rounded-full object-cover w-24 h-24'
+                                unoptimized 
                             />
                             <h2 className='font-bold text-xl'>{friend.name}</h2>
                             <span
